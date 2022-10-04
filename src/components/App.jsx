@@ -9,6 +9,10 @@ import { useEffect } from "react";
 import { fetchContacts } from "redux/operations";
 import { Loader } from "./Loader/Loader";
 import { BadRequest } from "./BadRequest/BadRequest";
+import { Navigation } from "./Navigation/Navigation";
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
+import { SharedLayout } from "./SharedLayout/SharedLayout";
+import { HomePage } from "pages/HomePage/HomePage";
 
 export const App = () => {
 
@@ -21,15 +25,26 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <Container>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <h2>Contacts</h2>
-      <Filter />
-      {isLoading && <Loader />}
-      {error && <BadRequest>Something went wrong</BadRequest>}
-      <ContactList />
-    </Container>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<HomePage/>}/>
+        <Route path="login" element={<p>login page</p>}/>
+        <Route path="register" element={<p>Register page</p>} />
+        <Route path="contacts" element={<ContactList/>}/>
+      </Route>
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
+    // <Container>
+    //   <h1>Phonebook</h1>
+    //   <Navigation/>
+    //   <ContactForm />
+    //   <Outlet/>
+    //   <h2>Contacts</h2>
+    //   <Filter />
+    //   {isLoading && <Loader />}
+    //   {error && <BadRequest>Something went wrong</BadRequest>}
+    //   <ContactList />
+    // </Container>
   )
 }
 
