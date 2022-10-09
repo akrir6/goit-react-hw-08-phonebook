@@ -13,6 +13,8 @@ import { Navigation } from "./Navigation/Navigation";
 import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { SharedLayout } from "./SharedLayout/SharedLayout";
 import { HomePage } from "pages/HomePage/HomePage";
+import { LoginPage } from "pages/LoginPage/LoginPage";
+import { RegisterPage } from "pages/RegisterPage/RegisterPage";
 
 export const App = () => {
 
@@ -28,8 +30,8 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<HomePage/>}/>
-        <Route path="login" element={<p>login page</p>}/>
-        <Route path="register" element={<p>Register page</p>} />
+        <Route path="login" element={<LoginPage/>}/>
+        <Route path="register" element={<RegisterPage/>} />
         <Route path="contacts" element={<ContactList/>}/>
       </Route>
       <Route path="*" element={<Navigate to="/" />} />

@@ -1,5 +1,4 @@
 import { MdOutlineMenuBook } from "react-icons/md"
-import { Link } from "react-router-dom"
 import { PLink, Welcome } from './HomePage.styled'
 
 export const HomePage = () => {
