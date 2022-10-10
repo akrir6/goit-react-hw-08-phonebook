@@ -11,10 +11,13 @@ export const Button = styled.button`
     border:none;
     font-size: small;
     outline: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+        color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 
     :hover,
     :focus {
         background-color: #FF931E;
+        color: #1F4E49;
     }
 `

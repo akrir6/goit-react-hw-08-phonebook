@@ -10,10 +10,11 @@ export const Container = styled.div`
 `
 
 
-export const Form=styled.form`
+export const Form = styled.form`
+    display: inline-block;
     padding: 8px;
     background-color: #F2F2F2;
-    
+    text-align: center;    
 `
 
 export const Label=styled.label`
@@ -39,16 +40,20 @@ export const Input=styled.input`
 `
 
 export const Button = styled.button`
+    margin-top: 8px;
     padding: 4px;
     background-color: #1F4E49;
     color: #F2F2F2;
     border:none;
     font-size: small;
     outline: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+        color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 
     :hover,
     :focus {
         background-color: #FF931E;
+        color: #1F4E49;
     }
 `
