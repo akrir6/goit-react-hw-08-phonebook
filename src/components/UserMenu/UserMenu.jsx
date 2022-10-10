@@ -1,16 +1,17 @@
 
-import { HomePage } from 'pages/HomePage/HomePage';
-import { MdAccountBox } from 'react-icons/md';
-import { Navigate } from 'react-router-dom';
 import { FaUserSecret } from "react-icons/fa"
 import { Button, UserNav, UserLabel } from './UserMenu.styled';
+import { useDispatch, useSelector } from 'react-redux';
+import { userLogout } from 'redux/auth/operation';
+import { selectUser } from 'redux/auth/selectors';
 
 export const UserMenu = () => {
-    return (
-      <UserNav>
-        <FaUserSecret size={28}  />
-        <UserLabel>mango@mail.com</UserLabel>
-        <Button type='button' onClick={() =><HomePage/>}>Logout</Button>
-        </UserNav>
-    )
+  const dispath = useDispatch();
+  return (
+    <UserNav>
+      <FaUserSecret size={20}  />
+      <UserLabel>{useSelector(selectUser).name}</UserLabel>
+      <Button type='button' onClick={() =>dispath(userLogout())}>Logout</Button>
+    </UserNav>
+  )
 }

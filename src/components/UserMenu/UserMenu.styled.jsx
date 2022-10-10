@@ -29,5 +29,6 @@ export const UserLabel = styled.span`
     display: block;
     padding-right:  8px;
     font-size: medium;
+    font-weight: 700;
     
  `

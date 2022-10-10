@@ -1,7 +1,7 @@
 import { MdOutlineMenuBook } from "react-icons/md"
 import { PLink, Welcome } from './HomePage.styled'
 
-export const HomePage = () => {
+const HomePage = () => {
     return (
         <Welcome>
             <div>
@@ -12,3 +12,4 @@ export const HomePage = () => {
         </Welcome>
     )
 }
+export default HomePage;

@@ -3,7 +3,7 @@ import {
   userLogout,
   userRegister,
   userGetCurrent,
-} from './operations';
+} from './operation';
 import { createSlice, isAnyOf, isFulfilled } from '@reduxjs/toolkit';
 
 const userInitState = {
@@ -13,7 +13,7 @@ const userInitState = {
   isRefreshing: false,
 };
 
-const isLogginedActions = isFulfilled(userLogin, userRegister, userGetCurrent);
+const isLogginedActions = isFulfilled(userLogin, userRegister);
 
 const authSlice = createSlice({
   name: 'auth',
@@ -27,6 +27,11 @@ const authSlice = createSlice({
       .addCase(userGetCurrent.rejected, state => {
         state.isRefreshing = false;
       })
+      .addCase(userGetCurrent.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isLoggedIn = true;
+        state.isRefreshing = false;
+      })
       .addCase(userLogout.fulfilled, state => {
         state.user = { name: null, email: null };
         state.token = null;
@@ -34,11 +39,10 @@ const authSlice = createSlice({
         state.isRefreshing = false;
       })
       .addMatcher(isAnyOf(isLogginedActions), (state, action) => {
-        state.user = action.payload;
+        state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
-        state.isRefreshing = false;
       }),
 });
 
-export const userReduser = authSlice.reducer;
+export const authReduser = authSlice.reducer;

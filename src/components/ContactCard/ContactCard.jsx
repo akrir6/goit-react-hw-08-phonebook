@@ -1,15 +1,15 @@
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { removeContact } from "redux/operations";
+import { removeContact } from "redux/contacts/operations";
 import { Text, Button } from "./ContactCard.styled";
 
-export const ContactCard = ({ id, name, phone }) => {
+export const ContactCard = ({ id, name, number }) => {
     const dispatch = useDispatch();
 
     return (
         <>
             <Text>{name}</Text>
-            <Text>{phone}</Text>
+            <Text>{number}</Text>
             <Button type="button" onClick={()=>dispatch(removeContact(id))}>Delete</Button>
         </>
     )
@@ -18,5 +18,5 @@ export const ContactCard = ({ id, name, phone }) => {
 ContactCard.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
 }
