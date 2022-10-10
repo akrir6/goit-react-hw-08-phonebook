@@ -19,6 +19,7 @@ export const userRegister = createAsyncThunk(
       setAuthToken(data.token);
       return data;
     } catch (error) {
+      alert('Invalid registration data!');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -32,6 +33,7 @@ export const userLogin = createAsyncThunk(
       setAuthToken(data.token);
       return data;
     } catch (error) {
+      alert('Wrong credentials!');
       return thunkAPI.rejectWithValue(error.message);
     }
   }

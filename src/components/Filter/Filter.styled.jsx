@@ -3,9 +3,9 @@ import styled from "@emotion/styled";
 export const Label = styled.label`
     display: flex;
     padding: 8px;
+    gap:8px;
     height: 20px;
     background-color: #CCEBE8;
-    justify-content: space-between;
     align-items:center;
 `
 

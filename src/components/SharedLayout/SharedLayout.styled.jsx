@@ -3,9 +3,7 @@ import styled from "@emotion/styled";
 export const Container = styled.div`
   margin: auto;
   padding: 8px;
-  /* width: fit-content; */
-  max-width: 700px;
-  /* border: 1px solid #1F4E49; */
+  max-width: 500px;
 
   h1 {
     padding: 8px;

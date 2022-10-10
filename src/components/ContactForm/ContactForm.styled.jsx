@@ -1,18 +1,29 @@
 import styled from "@emotion/styled";
 
+export const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    background-color: #F2F2F2;
+    padding: 8px;
+    border: 1px solid #CCEBE8;
+    color: #1F4E49;
+`
+
+
 export const Form=styled.form`
     padding: 8px;
     background-color: #F2F2F2;
+    
 `
 
 export const Label=styled.label`
     display: flex;
-    margin-bottom: 4px;
+    gap: 8px;
     padding: 4px;
     height: 20px;
     justify-content: space-between;
     align-items:center;
-    font-size: large;
+    font-size: small;
 `
 
 export const Input=styled.input`
