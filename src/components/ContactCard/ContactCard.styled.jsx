@@ -1,7 +1,9 @@
 import styled from "@emotion/styled";
 
 export const Text = styled.span`
+display: block;
     padding:  8px;
+    width: 200px;
  `
 export const Button = styled.button`
     margin: 0;

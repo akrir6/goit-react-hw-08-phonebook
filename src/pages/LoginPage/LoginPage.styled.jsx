@@ -18,7 +18,7 @@ export const Form = styled.form`
 export const Label=styled.label`
     display: flex;
     gap: 8px;
-    padding: 4px;
+    padding: 8px;
     height: 20px;
     justify-content: space-between;
     align-items:center;
@@ -30,6 +30,7 @@ export const Input=styled.input`
     color: #1F4E49;
     font-size: medium;
     outline: none;
+    border-radius: 0;
 
     :hover,
     :focus{
