@@ -11,6 +11,7 @@ export const Label = styled.label`
 
 export const Input = styled.input`
     border:1px solid #1F4E4950;
+    border-radius: 0;
     color: #1F4E49;
     font-size: medium;
     outline: none;

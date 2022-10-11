@@ -21,7 +21,7 @@ export const Label=styled.label`
     padding: 4px;
     height: 20px;
     justify-content: space-between;
-    align-items:center;
+    align-items:baseline;
     font-size: small;
 `
 
@@ -30,6 +30,7 @@ export const Input=styled.input`
     color: #1F4E49;
     font-size: medium;
     outline: none;
+    border-radius: 0;
 
     :hover,
     :focus{
