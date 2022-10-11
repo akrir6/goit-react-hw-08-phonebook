@@ -18,10 +18,10 @@ export const Form = styled.form`
 export const Label=styled.label`
     display: flex;
     gap: 8px;
-    padding: 4px;
+    padding: 8px;
     height: 20px;
     justify-content: space-between;
-    align-items:baseline;
+    align-items:center;
     font-size: small;
 `
 
